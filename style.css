@@ -1,0 +1,50 @@
+/* Configuración general */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor principal de la marquesina */
+.marquee-container {
+    width: 100%;
+    background: #1f1f1f;
+    border-top: 2px solid #00f2fe;
+    border-bottom: 2px solid #00f2fe;
+    overflow: hidden; /* Esconde lo que sale del recuadro */
+    padding: 20px 0;
+    display: flex;
+}
+
+/* El texto que se mueve */
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #00f2fe;
+    text-transform: uppercase;
+    animation: scroll-left 20s linear infinite;
+    padding-left: 100%;
+}
+
+/* Pausa la animación al pasar el mouse */
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+    color: #fbff00;
+}
+
+/* Animación de desplazamiento */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
